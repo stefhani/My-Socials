@@ -35,5 +35,19 @@ public class HelloWordHttpServlet2 extends HttpServlet {
     
         out.close();
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType ("text/html;charset=UTF-8");
+
+        
+        PrintWriter out = resp.getWriter ();
+
+        out.println ("<h2>User:"+req.getParameter("nombre") +"</h2>");
+        out.println ("<h2>Password"+req.getParameter("apellido")+"</h2>");
+        
+    
+        out.close();
+    }
     
 }
